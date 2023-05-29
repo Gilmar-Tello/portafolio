@@ -1,0 +1,37 @@
+<meta charset="UTF-8">
+
+<body bgcolor="blue-sky">
+  <h1>ENCRIPTADOR DE TEXTO</h1>
+    
+      <label for="input-texto">Ingrese solo letras minusculas y sin tildes</label>
+      <input class="text-input" type="text" name="input-texto" id="input-texto" placeholder="Ingrese el texto aqui">
+      <input class="btn" type="button" value="encriptar!" id="btn-encriptar">
+      <input class="btn" type="button" value="desencriptar!" id="btn-desencriptar">
+   
+      <h2 id="">MENSAJE ENCRIPTADO</h2>
+      <input class="text-input-salida" type="text" id="msg">
+ 
+
+
+</body>
+
+  <script>
+    function encriptar (){
+    var texto = document.querySelector("#input-texto").value;
+    var textoCifrado = texto.replace(/e/gi, "enter").replace(/i/gi, "imes").replace(/a/gi, "ai").replace(/o/gi, "ober").replace(/u/gi, "ufat");
+    document.querySelector(".text-input-salida").value = textoCifrado;
+    document.querySelector("#input-texto").value;
+    }
+
+
+    
+    var boton1 = document.querySelector("#btn-encriptar"); boton1.onclick = encriptar;
+
+    function desencriptar (){ var texto = document.querySelector("#input-texto").value; var textoCifrado = texto.replace(/enter/gi, "e").replace(/imes/gi, "i").replace(/ai/gi, "a").replace(/ober/gi, "o").replace(/ufat/gi, "u"); document.querySelector(".text-input-salida").value = textoCifrado; document.querySelector("#input-texto").value;
+
+    }
+
+    var boton2 = document.querySelector("#btn-desencriptar"); boton2.onclick = desencriptar;
+  </script>
+
+

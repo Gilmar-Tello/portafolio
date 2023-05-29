@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Girasol</title>
+  </head>
+  <body>
+    <canvas id="myCanvas" width="400" height="400"></canvas>
+    <script>
+      var canvas = document.getElementById("myCanvas");
+      var context = canvas.getContext("2d");
+
+      // Dibuja el centro del girasol
+      context.beginPath();
+      context.arc(200, 200, 50, 0, Math.PI*2);
+      context.fillStyle = "#FFC300";
+      context.fill();
+      context.closePath();
+
+      // Dibuja los pétalos del girasol
+      context.beginPath();
+      context.moveTo(200, 200);
+      context.arc(200, 125, 75, 0, Math.PI*2, false);
+      context.moveTo(200, 200);
+      context.arc(275, 200, 75, 0, Math.PI*2, false);
+      context.moveTo(200, 200);
+      context.arc(200, 275, 75, 0, Math.PI*2, false);
+      context.moveTo(200, 200);
+      context.arc(125, 200, 75, 0, Math.PI*2, false);
+      context.fillStyle = "#FFDC35";
+      context.fill();
+      context.closePath();
+
+      // Dibuja el centro marrón del girasol
+      context.beginPath();
+      context.arc(200, 200, 25, 0, Math.PI*2);
+      context.fillStyle = "#8B4513";
+      context.fill();
+      context.closePath();
+    </script>
+  </body>
+</html>

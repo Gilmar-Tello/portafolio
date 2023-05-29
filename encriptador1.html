@@ -1,0 +1,39 @@
+<meta charset="UTF-8">
+<h1>ENCRIPTADOR DE TEXTO</h1>
+<script>
+    
+// Función para encriptar el texto con el cifrado de César
+function cifrarTexto(texto, desplazamiento) {
+  let textoCifrado = "";
+  for (let i = 0; i < texto.length; i++) {
+    let caracter = texto.charCodeAt(i);
+    if (caracter >= 65 && caracter <= 90) {
+      // Mayúsculas
+      textoCifrado += String.fromCharCode(((caracter - 65 + desplazamiento) % 26) + 65);
+    } else if (caracter >= 97 && caracter <= 122) {
+      // Minúsculas
+      textoCifrado += String.fromCharCode(((caracter - 97 + desplazamiento) % 26) + 97);
+    } else {
+      // Otros caracteres
+      textoCifrado += texto.charAt(i);
+    }
+  }
+  return textoCifrado;
+}
+
+// Función para desencriptar el texto con el cifrado de César
+function descifrarTexto(texto, desplazamiento) {
+  return cifrarTexto(texto, 26 - desplazamiento);
+}
+
+// Ejemplo de uso
+let texto = prompt("Ingresa el texto a encriptar:");
+let desplazamiento = parseInt(prompt("Ingresa el desplazamiento:"));
+
+let textoCifrado = cifrarTexto(texto, desplazamiento);
+console.log("Texto cifrado: " + textoCifrado);
+
+let textoDescifrado = descifrarTexto(textoCifrado, desplazamiento);
+console.log("Texto descifrado: " + textoDescifrado);
+
+</script>

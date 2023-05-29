@@ -1,0 +1,18 @@
+<script>
+
+// Define el texto y la clave de cifrado
+const text = "Este es un texto de prueba para cifrar.";
+const key = "clave-secreta";
+
+// Cifra el texto utilizando la función "encrypt"
+encrypt(text, key)
+  .then((encryptedText) => {
+    // Imprime el texto cifrado en la consola
+    console.log("Texto cifrado:", encryptedText);
+  })
+  .catch((error) => {
+    console.error("Error al cifrar el texto:", error);
+  });
+
+
+</script>
